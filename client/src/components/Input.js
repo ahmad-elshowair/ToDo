@@ -1,19 +1,19 @@
 import React from "react";
 
 export const Input = () =>{
-  const [description, setDescription] = React.useState('');
+  const [description, setDescription] = React.useState("");
 
   const handleOnSubmit = async (event)=>{
     event.preventDefault();
     try {
-      const body = {description};
-      const response = await fetch('http://loaclhost:8000/todos/create', {
-        method: "POST",
-        headers: {"Content-Type": "application/json"},
-        body: JSON.stringify(body)
-      });
+      const body = { description };
 
-      
+      const response = await fetch('http://localhost:8000/todos/create', {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body)
+      }); 
+      console.log(response);
     } catch (error) {
       throw new Error(`the error is: ${error.message}`);
     }
