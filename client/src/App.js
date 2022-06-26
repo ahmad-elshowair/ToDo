@@ -1,9 +1,11 @@
 import React from 'react';
 import './App.css';
+import { Input } from './components/Input';
+
 export const App = () =>{
   return(
-    <>
-      <h1> react</h1>
-    </>
+    <main className='container'>
+      <Input />
+    </main>
   )
 };
