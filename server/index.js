@@ -3,7 +3,7 @@ import cors from 'cors';
 import pool  from './db.js';
 
 const app = express();
-const port = 3000
+const port = 8000
 
 // ============== middleware ============== //
 app.use(cors());
