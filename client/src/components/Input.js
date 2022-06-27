@@ -8,12 +8,11 @@ export const Input = () =>{
     try {
       const body = { description };
 
-      const response = await fetch('http://localhost:8000/todos/create', {
+      await fetch('http://localhost:8000/todos/create', {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body)
       }); 
-      console.log(response);
     } catch (error) {
       throw new Error(`the error is: ${error.message}`);
     }
