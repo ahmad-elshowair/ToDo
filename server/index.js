@@ -26,6 +26,24 @@ app.post("/todos/create", async (req, res) => {
    }
  });
 // update a todo
+app.put('/todos/edit/:id', async(req, res)=>{
+   try {
+      const {id} = req.params;
+      const {description} = req.body;
+      const query = 'UPDATE todo SET description=($1) WHERE todo_id =($2) RETURNING *';
+      const connection = await pool.connect();
+      const result = await connection.query(query,[description, id]);
+      res.json({
+         message: "the todo has updated successfully",
+         data: result.rows[0]
+      });
+      connection.release();
+   } catch (error) {
+      throw new Error(`the error is: ${error.message}`);
+   }
+});
+
+
 
 // read todoes
 app.get('/todos', async(req, res)=>{
