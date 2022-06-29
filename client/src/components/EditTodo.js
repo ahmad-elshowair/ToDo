@@ -10,7 +10,7 @@ export const EditTodo = ({todo})=>{
     event.preventDefault();
     try {
       const body = {description}
-        await fetch(`http://localhost:8000/todos/edit/${todo.todo_id}`,{
+        await fetch(`https://ahmad-pern-todo.herokuapp.com/todos/edit/${todo.todo_id}`,{
           method: "PUT",
           headers: {"Content-Type": "application/json"},
           body: JSON.stringify(body)

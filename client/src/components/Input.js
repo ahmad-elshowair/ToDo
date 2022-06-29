@@ -8,7 +8,7 @@ export const Input = () =>{
     try {
       const body = { description };
 
-      await fetch('http://localhost:8000/todos/create', {
+      await fetch('https://ahmad-pern-todo.herokuapp.com/todos/create', {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body)
