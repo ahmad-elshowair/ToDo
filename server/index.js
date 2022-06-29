@@ -1,12 +1,10 @@
 import express from 'express';
-import cors from 'cors';
 import pool  from './db.js';
 
 const app = express();
 const port = 8000
 
 // ============== middleware ============== //
-app.use(cors());
 app.use(express.json());
 
 
