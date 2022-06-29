@@ -10,7 +10,7 @@ export const TodoList = () =>{
   // get all todos
   const getTodos = async() =>{
     try {
-      const response = await fetch('https://ahmad-pern-todo.herokuapp.com/todos')
+      const response = await fetch('http://localhost:8000/todos')
       const data = await response.json();
       setTodos(data);
     } catch (error) {
@@ -25,7 +25,7 @@ export const TodoList = () =>{
   // delete a todo
  const handleDeleteAction = async (id)=>{
   try{
-      await fetch(`https://ahmad-pern-todo.herokuapp.com/todos/delete/${id}`,{
+      await fetch(`http://localhost:8000/todos/delete/${id}`,{
         method: "DELETE"
       });
   }catch(error){
